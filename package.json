@@ -1,0 +1,12 @@
+{
+  "name": "scisat-1",
+  "version": "0.0.0",
+  "description": "Beautiful British Columbia memory card game.",
+  "main": "index.js",
+  "repository": "https://github.com/mahyarmirrashed/scisat-1.git",
+  "author": "scisat-1",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
