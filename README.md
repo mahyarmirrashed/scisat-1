@@ -26,4 +26,4 @@ All images used in this project were taking from Google Images. The images belon
 - [Barnacle](https://en.wikipedia.org/wiki/Barnacle): `https://en.wikipedia.org/wiki/Barnacle`
 - [Blue shark](https://en.wikipedia.org/wiki/Blue_shark): `https://en.wikipedia.org/wiki/Blue_shark`
 - [Starfish](https://en.wikipedia.org/wiki/Pisaster_ochraceus): `https://en.wikipedia.org/wiki/Pisaster_ochraceus`
-- [Riskfish](https://en.wikipedia.org/wiki/Sebastes) `https://en.wikipedia.org/wiki/Sebastes`
+- [Rockfish](https://en.wikipedia.org/wiki/Sebastes) `https://en.wikipedia.org/wiki/Sebastes`
