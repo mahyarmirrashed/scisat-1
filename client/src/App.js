@@ -20,6 +20,13 @@ import Typography from '@mui/material/Typography';
 
 function App() {
   const [statusMessage, setStatusMessage] = useState("Start the Game!");
+  //const [inputGrid, setInputGrid] = useState([[]]);
+  const images = [
+    {"src":"/res/imgcapilano-suspension-bridge.jpg",
+      "fact":""},
+    {"src":"stanley-park.jpg",
+      "fact":""}
+  ]
   let board_grid = [[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1]];
 
   function onClick(X, Y) {
