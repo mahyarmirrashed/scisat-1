@@ -19,6 +19,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
 function App() {
+  const [statusMessage, setStatusMessage] = useState("Start the Game!");
   //const [inputGrid, setInputGrid] = useState([[]]);
   const images = [
     {"src":"/res/imgcapilano-suspension-bridge.jpg",
@@ -28,6 +29,11 @@ function App() {
   ]
   let board_grid = [[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1]];
 
+  function onClick(X, Y) {
+    setStatusMessage("You clicked box " + X + " " + Y);
+
+  }
+  
   return (
     <div className="App">
       <Container maxWidth="lg">
@@ -36,7 +42,8 @@ function App() {
             <Typography variant="h3">SCISAT-1</Typography>
           </Toolbar>
         </AppBar>
-        <Paper elevation={20}>
+        <Paper marginTop="4" elevation={20}>
+          <Typography variant="h3">{statusMessage}</Typography>
           {board_grid.map((nums, X) => (
             <Box
               display="flex"
@@ -61,6 +68,7 @@ function App() {
                           : '0px',
                     },
                   }}
+                  onClick={() => onClick(X, Y)}
                 ></Box>
               ))}
             </Box>
