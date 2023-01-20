@@ -25,3 +25,5 @@ All images used in this project were taking from Google Images. The images belon
 - [Giant Octopus](https://en.wikipedia.org/wiki/Giant_Pacific_octopus): `https://en.wikipedia.org/wiki/Giant_Pacific_octopus`
 - [Barnacle](https://en.wikipedia.org/wiki/Barnacle): `https://en.wikipedia.org/wiki/Barnacle`
 - [Blue shark](https://en.wikipedia.org/wiki/Blue_shark): `https://en.wikipedia.org/wiki/Blue_shark`
+- [Starfish](https://en.wikipedia.org/wiki/Pisaster_ochraceus): `https://en.wikipedia.org/wiki/Pisaster_ochraceus`
+- [Rockfish](https://en.wikipedia.org/wiki/Sebastes) `https://en.wikipedia.org/wiki/Sebastes`
