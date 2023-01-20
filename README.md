@@ -13,3 +13,7 @@ All images used in this project were taking from Google Images. The images belon
 - [Various animal images](https://www.animalsaroundtheglobe.com/animals-in-british-columbia/)
 - [Orca](https://en.wikipedia.org/wiki/Orca)
 - [Sea lion](https://en.wikipedia.org/wiki/California_sea_lion)
+- [Little brown bat](https://sierraclub.bc.ca/little-brown-myotis/)
+- [Harbor Seal](https://en.wikipedia.org/wiki/Harbor_seal)
+- [Tufted puffin](https://ebird.org/species/tufpuf)
+- [Norther right whale dolphin](https://en.wikipedia.org/wiki/Northern_right_whale_dolphin))
