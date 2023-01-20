@@ -10,10 +10,11 @@ All images used in this project were taking from Google Images. The images belon
 - [Grouse Mountain](<https://www.tripsavvy.com/thmb/aZKyF-QE2n1coGNAuUWLFIVVlow=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Grouse-Mountain-Skyride-Summer-low-5693b89a3df78cafda849e32.jpg>): `https://www.tripsavvy.com/thmb/aZKyF-QE2n1coGNAuUWLFIVVlow=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Grouse-Mountain-Skyride-Summer-low-5693b89a3df78cafda849e32.jpg`
 - [Kitsilano Beach](https://ariannerelocation.com/wp-content/uploads/2019/05/English-Bay-across-from-Kitsilano-Vancouver.jpg): `https://ariannerelocation.com/wp-content/uploads/2019/05/English-Bay-across-from-Kitsilano-Vancouver.jpg`
 - [Stanley Park](https://destinationlesstravel.com/wp-content/uploads/2021/09/Depositphotos_174216832_xl-2015.jpg): `https://destinationlesstravel.com/wp-content/uploads/2021/09/Depositphotos_174216832_xl-2015.jpg`
-- [Various animal images](https://www.animalsaroundtheglobe.com/animals-in-british-columbia/)
+- [Various Animal Images (Humpback Whale, Canada Goose, Great Blue Heron, Trumpter Swan)](https://www.animalsaroundtheglobe.com/animals-in-british-columbia/): `https://www.animalsaroundtheglobe.com/animals-in-british-columbia/`
 - [Orca](https://en.wikipedia.org/wiki/Orca)
 - [Sea lion](https://en.wikipedia.org/wiki/California_sea_lion)
 - [Little brown bat](https://sierraclub.bc.ca/little-brown-myotis/)
 - [Harbor Seal](https://en.wikipedia.org/wiki/Harbor_seal)
 - [Tufted puffin](https://ebird.org/species/tufpuf)
 - [Norther right whale dolphin](https://en.wikipedia.org/wiki/Northern_right_whale_dolphin))
+
