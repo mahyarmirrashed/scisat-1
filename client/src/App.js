@@ -20,6 +20,12 @@ import Typography from '@mui/material/Typography';
 
 function App() {
   //const [inputGrid, setInputGrid] = useState([[]]);
+  const images = [
+    {"src":"/res/imgcapilano-suspension-bridge.jpg",
+      "fact":""},
+    {"src":"stanley-park.jpg",
+      "fact":""}
+  ]
   let board_grid = [[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1]];
 
   return (
