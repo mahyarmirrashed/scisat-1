@@ -22,15 +22,21 @@ function App() {
   const [statusMessage, setStatusMessage] = useState("Start the Game!");
   //const [inputGrid, setInputGrid] = useState([[]]);
   const images = [
-    {"src":"/res/imgcapilano-suspension-bridge.jpg",
+    {"src":"/res/img/capilano-suspension-bridge.jpg",
       "fact":""},
-    {"src":"stanley-park.jpg",
+    {"src":"/res/img/stanley-park.jpg",
       "fact":""}
   ]
-  let board_grid = [[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1]];
+  let board_grid = [[{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true}],
+  [{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true}],
+  [{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true}],
+  [{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true}],
+  ];
+  const [boardGrid, setBoardGrid] = useState([board_grid]);
 
   function onClick(X, Y) {
     setStatusMessage("You clicked box " + X + " " + Y);
+    board_grid[X][Y].covered = !board_grid[X][Y].covered;
 
   }
   
@@ -53,23 +59,15 @@ function App() {
               {nums.map((nums, Y) => (
                 <Box
                   sx={{
-                    width: '25px',
-                    height: '25px',
                     border: '2px solid white',
                     padding: '5px',
-                    backgroundColor:
-                      board_grid[X][Y] === 0 ? 'white' : 'primary.main',
-                    '&:hover': {
-                      width: board_grid[X][Y] === 0 ? '25px' : '29px',
-                      height: board_grid[X][Y] === 0 ? '25px' : '29px',
-                      border:
-                        board_grid[X][Y] === 0
-                          ? '2px solid lightgray'
-                          : '0px',
-                    },
+                    height: '128px',
+                    width: '128px',
+                    backgroundColor: 'primary.main',
                   }}
                   onClick={() => onClick(X, Y)}
-                ></Box>
+                >
+                {board_grid[X][Y].covered?"":<img src={images[board_grid[X][Y].image].src} width='128' height='128'></img>}</Box>
               ))}
             </Box>
           ))}
