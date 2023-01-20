@@ -19,3 +19,4 @@ All images used in this project were taking from Google Images. The images belon
 - [Orca](https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Killerwhales_jumping.jpg/1920px-Killerwhales_jumping.jpg): `https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Killerwhales_jumping.jpg/1920px-Killerwhales_jumping.jpg`
 - [Sea Lion](https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Sea_Lions_At_La_Jolla_Cove_-_32.jpg/1920px-Sea_Lions_At_La_Jolla_Cove_-_32.jpg): `https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Sea_Lions_At_La_Jolla_Cove_-_32.jpg/1920px-Sea_Lions_At_La_Jolla_Cove_-_32.jpg`
 - [Gray Whale](https://en.wikipedia.org/wiki/Gray_whale): `https://en.wikipedia.org/wiki/Gray_whale`
+- [Grizzly Bear](https://www.kidzone.ws/images/grizzly.jpg): `https://www.kidzone.ws/images/grizzly.jpg`
