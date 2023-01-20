@@ -1,0 +1,52 @@
+[
+    {
+        "id":1,
+        "src": "/res/img/barnacle.jpg",
+        "fact": "Barancles eat with their legs."
+    },
+    {
+        "id":2,
+        "src": "/res/img/blue-shark.jpg",
+        "fact": "Blue sharks are highly migratory animals."
+    },
+    {
+        "id":3,
+        "src": "/res/img/butchart-gardens.jpg",
+        "fact": "Butchart Gardens has 26 green houses."
+    },
+    {
+        "id":4,
+        "src": "/res/img/canada-goose.jpg",
+        "fact": "Canadian geese mate for life."
+    },
+    {
+        "id":5,
+        "src": "/res/img/capilano-suspension-bridge.jpg",
+        "fact": "The original Capilano Suspension Bridge was built in 1889, with hemp rope and cedar planks."
+    },
+    {
+        "id":6,
+        "src": "/res/img/fishermen.jpg",
+        "fact": "The three main groups of species currently cultured in B.C waters include salmon and other finfish, shellfish and marine plants."
+    },
+    {
+        "id":7,
+        "src": "/res/img/giant-octopus.jpg",
+        "fact": "Giant Pacific Octopi are known to be intoverted."
+    },
+    {
+        "id":8,
+        "src": "/res/img/gray-whale.jpg",
+        "fact": "Gray whales earned the nickname devil fish because of their aggressive reactions when harpooned."
+    },
+    {
+        "id":9,
+        "src": "/res/img/grizzly-bear.jpg",
+        "fact": "Grizzly bear front claws can be up to 10cm in length."
+    },
+    {
+        "id":10,
+        "src": "/res/img/grouse-mountain.jpg",
+        "fact": "The Grouse Mountain Skyride is an 850M ascent to the peak of Vancouver."
+    },
+]
