@@ -12,12 +12,9 @@ All images used in this project were taking from Google Images. The images belon
 - [Kitsilano Beach](https://ariannerelocation.com/wp-content/uploads/2019/05/English-Bay-across-from-Kitsilano-Vancouver.jpg): `https://ariannerelocation.com/wp-content/uploads/2019/05/English-Bay-across-from-Kitsilano-Vancouver.jpg`
 - [Stanley Park](https://destinationlesstravel.com/wp-content/uploads/2021/09/Depositphotos_174216832_xl-2015.jpg): `https://destinationlesstravel.com/wp-content/uploads/2021/09/Depositphotos_174216832_xl-2015.jpg`
 - [Various Animal Images (Humpback Whale, Canada Goose, Great Blue Heron, Trumpter Swan)](https://www.animalsaroundtheglobe.com/animals-in-british-columbia/): `https://www.animalsaroundtheglobe.com/animals-in-british-columbia/`
-- [Orca](https://en.wikipedia.org/wiki/Orca)
-- [Sea lion](https://en.wikipedia.org/wiki/California_sea_lion)
-- [Little brown bat](https://sierraclub.bc.ca/little-brown-myotis/)
-- [Harbor Seal](https://en.wikipedia.org/wiki/Harbor_seal)
-- [Tufted puffin](https://ebird.org/species/tufpuf)
-- [Norther right whale dolphin](https://en.wikipedia.org/wiki/Northern_right_whale_dolphin))
-
+- [Little Brown Bat](https://sierraclub.bc.ca/little-brown-myotis/): `https://sierraclub.bc.ca/little-brown-myotis/`
+- [Harbor Seal](https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Common_seal_%28Phoca_vitulina%29_2.jpg/1920px-Common_seal_%28Phoca_vitulina%29_2.jpg): `https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Common_seal_%28Phoca_vitulina%29_2.jpg/1920px-Common_seal_%28Phoca_vitulina%29_2.jpg`
+- [Tufted Puffin](https://ebird.org/species/tufpuf): `https://ebird.org/species/tufpuf`
+- [Norther Right Whale Dolphin](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Anim1749_-_Flickr_-_NOAA_Photo_Library.jpg/1920px-Anim1749_-_Flickr_-_NOAA_Photo_Library.jpg): `https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Anim1749_-_Flickr_-_NOAA_Photo_Library.jpg/1920px-Anim1749_-_Flickr_-_NOAA_Photo_Library.jpg`
 - [Orca](https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Killerwhales_jumping.jpg/1920px-Killerwhales_jumping.jpg): `https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Killerwhales_jumping.jpg/1920px-Killerwhales_jumping.jpg`
 - [Sea Lion](https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Sea_Lions_At_La_Jolla_Cove_-_32.jpg/1920px-Sea_Lions_At_La_Jolla_Cove_-_32.jpg): `https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Sea_Lions_At_La_Jolla_Cove_-_32.jpg/1920px-Sea_Lions_At_La_Jolla_Cove_-_32.jpg`
