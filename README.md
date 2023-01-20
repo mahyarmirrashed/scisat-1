@@ -11,5 +11,5 @@ All images used in this project were taking from Google Images. The images belon
 - [Kitsilano Beach](https://ariannerelocation.com/wp-content/uploads/2019/05/English-Bay-across-from-Kitsilano-Vancouver.jpg): `https://ariannerelocation.com/wp-content/uploads/2019/05/English-Bay-across-from-Kitsilano-Vancouver.jpg`
 - [Stanley Park](https://destinationlesstravel.com/wp-content/uploads/2021/09/Depositphotos_174216832_xl-2015.jpg): `https://destinationlesstravel.com/wp-content/uploads/2021/09/Depositphotos_174216832_xl-2015.jpg`
 - [Various Animal Images (Humpback Whale, Canada Goose, Great Blue Heron, Trumpter Swan)](https://www.animalsaroundtheglobe.com/animals-in-british-columbia/): `https://www.animalsaroundtheglobe.com/animals-in-british-columbia/`
-- [Orca](https://en.wikipedia.org/wiki/Orca)
-- [Sea Lion](https://en.wikipedia.org/wiki/California_sea_lion): `https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Sea_Lions_At_La_Jolla_Cove_-_32.jpg/1920px-Sea_Lions_At_La_Jolla_Cove_-_32.jpg`
+- [Orca](https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Killerwhales_jumping.jpg/1920px-Killerwhales_jumping.jpg): `https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Killerwhales_jumping.jpg/1920px-Killerwhales_jumping.jpg`
+- [Sea Lion](https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Sea_Lions_At_La_Jolla_Cove_-_32.jpg/1920px-Sea_Lions_At_La_Jolla_Cove_-_32.jpg): `https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Sea_Lions_At_La_Jolla_Cove_-_32.jpg/1920px-Sea_Lions_At_La_Jolla_Cove_-_32.jpg`
