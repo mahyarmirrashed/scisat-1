@@ -1,5 +1,7 @@
 # SCISAT-1
 
+This is a memory card game using Material UI on the front end. Match the pairs in the time allotted to win!
+
 ## Images Used
 
 All images used in this project were taking from Google Images. The images belong solely to the authors. We are using it under fair use. The original sources of each image are listed.
