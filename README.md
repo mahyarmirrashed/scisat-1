@@ -1,5 +1,7 @@
 # SCISAT-1
 
+This is a memory card game using Material UI on the front end. Match the pairs in the time allotted to win!
+
 ## Images Used
 
 All images used in this project were taking from Google Images. The images belong solely to the authors. We are using it under fair use. The original sources of each image are listed.
@@ -20,3 +22,8 @@ All images used in this project were taking from Google Images. The images belon
 - [Sea Lion](https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Sea_Lions_At_La_Jolla_Cove_-_32.jpg/1920px-Sea_Lions_At_La_Jolla_Cove_-_32.jpg): `https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Sea_Lions_At_La_Jolla_Cove_-_32.jpg/1920px-Sea_Lions_At_La_Jolla_Cove_-_32.jpg`
 - [Gray Whale](https://en.wikipedia.org/wiki/Gray_whale): `https://en.wikipedia.org/wiki/Gray_whale`
 - [Grizzly Bear](https://www.kidzone.ws/images/grizzly.jpg): `https://www.kidzone.ws/images/grizzly.jpg`
+- [Giant Octopus](https://en.wikipedia.org/wiki/Giant_Pacific_octopus): `https://en.wikipedia.org/wiki/Giant_Pacific_octopus`
+- [Barnacle](https://en.wikipedia.org/wiki/Barnacle): `https://en.wikipedia.org/wiki/Barnacle`
+- [Blue shark](https://en.wikipedia.org/wiki/Blue_shark): `https://en.wikipedia.org/wiki/Blue_shark`
+- [Starfish](https://en.wikipedia.org/wiki/Pisaster_ochraceus): `https://en.wikipedia.org/wiki/Pisaster_ochraceus`
+- [Rockfish](https://en.wikipedia.org/wiki/Sebastes): `https://en.wikipedia.org/wiki/Sebastes`
