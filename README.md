@@ -12,4 +12,4 @@ All images used in this project were taking from Google Images. The images belon
 - [Stanley Park](https://destinationlesstravel.com/wp-content/uploads/2021/09/Depositphotos_174216832_xl-2015.jpg): `https://destinationlesstravel.com/wp-content/uploads/2021/09/Depositphotos_174216832_xl-2015.jpg`
 - [Various Animal Images (Humpback Whale, Canada Goose, Great Blue Heron, Trumpter Swan)](https://www.animalsaroundtheglobe.com/animals-in-british-columbia/): `https://www.animalsaroundtheglobe.com/animals-in-british-columbia/`
 - [Orca](https://en.wikipedia.org/wiki/Orca)
-- [Sea lion](https://en.wikipedia.org/wiki/California_sea_lion)
+- [Sea Lion](https://en.wikipedia.org/wiki/California_sea_lion): `https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Sea_Lions_At_La_Jolla_Cove_-_32.jpg/1920px-Sea_Lions_At_La_Jolla_Cove_-_32.jpg`
