@@ -1,21 +1,47 @@
 import * as React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
+import FormControl from '@mui/material/FormControl';
+import FormControlLabel from '@mui/material/FormControlLabel';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Grid from '@mui/material/Grid';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import IOSSwitch from './IOSSwitch';
+
+import questions from './res/questions.json';
 
 const Question = (props) => {
+  const [value, setValue] = React.useState('false');
+
   return (
-    <Grid container data-question-id={props.id}>
-      <Grid container item xs={11}>
+    <Grid container sx={{ mb: 2 }} data-question-id={props.id}>
+      <Grid container item xs={3}>
+        <FormControl sx={{ mt: -0.5 }}>
+          <RadioGroup
+            row
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+          >
+            <FormControlLabel
+              value="false"
+              control={<Radio />}
+              label="False"
+              labelPlacement="left"
+            />
+            <FormControlLabel
+              value="true"
+              control={<Radio />}
+              label="True"
+              labelPlacement="left"
+            />
+          </RadioGroup>
+        </FormControl>
+      </Grid>
+      <Grid container item xs={9}>
         <Typography component="h6" variant="h6" align="left" display="inline">
           {props.text}
         </Typography>
-      </Grid>
-      <Grid container item xs={1} justifyContent="flex-end">
-        <IOSSwitch sx={{ mt: 0.5 }} defaultChecked />
       </Grid>
     </Grid>
   );
@@ -56,10 +82,14 @@ const App = () => {
         component="main"
         sx={{ pt: 4, pb: 4 }}
       >
-        <Question id={1} text="Lorem ipsum dolor sit amet." />
+        {questions.map((question) => (
+          <Question id={question.id} text={question.question} />
+        ))}
       </Container>
     </React.Fragment>
   );
 };
+
+console.log(questions);
 
 export default App;
