@@ -20,6 +20,7 @@ import Typography from '@mui/material/Typography';
 import SelectInput from '@mui/material/Select/SelectInput';
 import Fade from '@mui/material/Fade';
 import images from "./facts.json";
+import { yellow } from '@mui/material/colors';
 
 function App() {
   const BOARD_SIZE = 6;
@@ -167,6 +168,9 @@ function App() {
         setMatches(matches+1);
         setPickOne(null);
         setPickTwo(null);
+        if (matches === Math.floor((BOARD_SIZE*BOARD_SIZE)/2)) {
+          alert("Congrats! you matched all the cards in " + moves + " Moves! Click 'New Game' to play again!");
+        }
       }
       else{
         console.log(pickOne[0], pickOne[1], pickTwo[0], pickTwo[1]);
@@ -185,7 +189,7 @@ function App() {
       <Container maxWidth="lg">
         <AppBar position="static">
           <Toolbar>
-            <Typography variant="h3">SCISAT-1</Typography>
+            <Typography variant="h3">SCISAT-1 Memory Mayhem</Typography>
           </Toolbar>
         </AppBar>
         <Paper sx={{
@@ -202,7 +206,7 @@ function App() {
               margin: "8px",
             }}
           >
-            Start game
+            New Game
           </Button>
           <Typography variant="p" marginX={2}>Moves Made: {moves}</Typography>
           <Typography variant="p" marginX={2}>Matches: {matches}</Typography>
@@ -221,7 +225,7 @@ function App() {
                     padding: '5px',
                     height: '128px',
                     width: '128px',
-                    backgroundColor: 'primary.main',
+                    backgroundColor: boardGrid[X][Y].solved?yellow[500]:'primary.main',
                   }}
                   onClick={() => onClick(X, Y)}
                 >
