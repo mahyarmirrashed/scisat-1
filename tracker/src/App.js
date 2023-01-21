@@ -11,6 +11,12 @@ import Container from '@mui/material/Container';
 
 import questions from './res/questions.json';
 
+const NUMBER_OF_QUESTIONS = 10;
+
+const chooseRandomQuestions = (n = NUMBER_OF_QUESTIONS) => {
+  return questions.sort(() => Math.random() - Math.random()).slice(0, n);
+};
+
 const Question = (props) => {
   const [value, setValue] = React.useState('false');
 
@@ -82,14 +88,12 @@ const App = () => {
         component="main"
         sx={{ pt: 4, pb: 4 }}
       >
-        {questions.map((question) => (
+        {chooseRandomQuestions().map((question) => (
           <Question id={question.id} text={question.question} />
         ))}
       </Container>
     </React.Fragment>
   );
 };
-
-console.log(questions);
 
 export default App;
