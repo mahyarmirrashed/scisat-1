@@ -20,7 +20,9 @@ import Typography from '@mui/material/Typography';
 
 function App() {
   const BOARD_SIZE = 6;
-  const [statusMessage, setStatusMessage] = useState("Start the Game!");
+  const [statusMessage, setStatusMessage] = useState("Click the button above to start!");
+  const [moves, setMoves] = useState(0);
+  
   //const [inputGrid, setInputGrid] = useState([[]]);
   const images = [
     {"src":"/res/img/capilano-suspension-bridge.jpg",
@@ -36,6 +38,7 @@ function App() {
   const [boardGrid, setBoardGrid] = useState([board_grid]);
 
   function startGame() {
+    setMoves(0);
     let boardItems = [];
     let candidates = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24];
     let board_grid = Array(BOARD_SIZE).fill(null).map(() => Array(BOARD_SIZE));
@@ -62,6 +65,7 @@ function App() {
   function onClick(X, Y) {
     setStatusMessage("You clicked box " + X + " " + Y);
     board_grid[X][Y].covered = !board_grid[X][Y].covered;
+    setMoves(moves+1);
 
   }
   
@@ -73,15 +77,19 @@ function App() {
             <Typography variant="h3">SCISAT-1</Typography>
           </Toolbar>
         </AppBar>
-        <Paper marginTop="4" elevation={20}>
+        <Paper mt="4" elevation={20}>
           <Button
             type="submit"
             variant="contained"
-            margin="normal"
             onClick={() => startGame()}
+            sx={{
+              margin: "8px",
+            }}
           >
             Start game
           </Button>
+          <Typography variant="p">Moves Made: {moves}</Typography>
+          <div/>
           <Typography variant="p">{statusMessage}</Typography>
           {board_grid.map((nums, X) => (
             <Box
