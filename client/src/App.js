@@ -17,6 +17,7 @@ import Grid from '@mui/material/Grid';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import SelectInput from '@mui/material/Select/SelectInput';
 
 function App() {
   const BOARD_SIZE = 6;
@@ -264,9 +265,7 @@ function App() {
 
   }
 
-  function onClick(X, Y) {
-    setStatusMessage("You clicked box " + X + " " + Y);
-    
+  const flip = (X,Y) => {
     let newBoard = boardGrid.map((rows, indexX) => {
       return rows.map((box, indexY) => {
           if(X === indexX && Y === indexY){
@@ -277,8 +276,13 @@ function App() {
           }
         })
       })
-      handlePick([X,Y])
       setBoardGrid(newBoard)
+  }
+
+  function onClick(X, Y) {
+    setStatusMessage("You clicked box " + X + " " + Y);
+    flip(X,Y)
+    handlePick([X,Y])
   }
 
   const handlePick = (pick) => {
@@ -286,14 +290,28 @@ function App() {
   }
 
   useEffect(() => {
-    if(pickOne)
     if(pickOne && pickTwo){
+      if((pickOne[0] == pickTwo[0] && pickOne[1] == pickTwo[1])){
+        setStatusMessage("Pick a different card");
+        setPickTwo(null);
+        return;
+      }
       if(boardGrid[pickOne[0]][pickOne[1]].src === boardGrid[pickTwo[0]][pickTwo[1]].src){
         console.log("same image")
-        setStatusMessage("Those two match! " + boardGrid[pickOne[0]][pickOne[1]].fact)
+        setStatusMessage("Those two match! " + boardGrid[pickOne[0]][pickOne[1]].fact);
         setMatches(matches+1);
       }
-      else{console.log("diff image")}
+      else{
+        console.log(pickOne[0], pickOne[1], pickTwo[0], pickTwo[1])
+        var clear = true
+        
+        console.log("diff image");
+      }
+      if(clear){
+        //flip(pickOne[0], pickOne[1]);
+        //flip(pickTwo[0], pickTwo[1]);
+        clear=false;
+      }
       setPickOne(null)
       setPickTwo(null)
       setMoves(moves+1)
