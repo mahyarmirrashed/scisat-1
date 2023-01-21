@@ -1,4 +1,6 @@
 import * as React from 'react';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -11,32 +13,53 @@ import Container from '@mui/material/Container';
 
 import questions from './res/questions.json';
 
+let responses = {};
+
+const DEFAULT_QUESTION_VALUE = false;
+const NUMBER_OF_QUESTIONS = 10;
+
+const chooseRandomQuestions = (n = NUMBER_OF_QUESTIONS) => {
+  return questions.sort(() => Math.random() - Math.random()).slice(0, n);
+};
+
+const collectResponses = (e) => {
+  e.preventDefault();
+
+  console.log(responses);
+};
+
 const Question = (props) => {
   const [value, setValue] = React.useState('false');
+
+  const changeValue = (val) => {
+    responses[props.id] = val;
+    setValue(val);
+  };
+
+  responses[props.id] = DEFAULT_QUESTION_VALUE;
 
   return (
     <Grid container sx={{ mb: 2 }} data-question-id={props.id}>
       <Grid container item xs={3}>
-        <FormControl sx={{ mt: -0.5 }}>
-          <RadioGroup
-            row
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-          >
-            <FormControlLabel
-              value="false"
-              control={<Radio />}
-              label="False"
-              labelPlacement="left"
-            />
-            <FormControlLabel
-              value="true"
-              control={<Radio />}
-              label="True"
-              labelPlacement="left"
-            />
-          </RadioGroup>
-        </FormControl>
+        <RadioGroup
+          row
+          sx={{ mt: -0.5 }}
+          value={value}
+          onChange={(e) => changeValue(e.target.value)}
+        >
+          <FormControlLabel
+            value="false"
+            control={<Radio />}
+            label="False"
+            labelPlacement="left"
+          />
+          <FormControlLabel
+            value="true"
+            control={<Radio />}
+            label="True"
+            labelPlacement="left"
+          />
+        </RadioGroup>
       </Grid>
       <Grid container item xs={9}>
         <Typography component="h6" variant="h6" align="left" display="inline">
@@ -82,14 +105,19 @@ const App = () => {
         component="main"
         sx={{ pt: 4, pb: 4 }}
       >
-        {questions.map((question) => (
-          <Question id={question.id} text={question.question} />
-        ))}
+        <FormControl component="form" onSubmit={collectResponses}>
+          {chooseRandomQuestions().map((question) => (
+            <Question id={question.id} text={question.question} />
+          ))}
+          <Box textAlign="center">
+            <Button type="submit" variant="contained" size="large">
+              Submit
+            </Button>
+          </Box>
+        </FormControl>
       </Container>
     </React.Fragment>
   );
 };
-
-console.log(questions);
 
 export default App;

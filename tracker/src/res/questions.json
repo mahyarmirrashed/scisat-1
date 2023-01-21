@@ -1,127 +1,102 @@
 [
   {
     "id": 1,
-    "question": "Barnacles eat with their legs.",
-    "answer": true
+    "question": "Barnacles eat with their legs."
   },
   {
     "id": 2,
-    "question": "Blue sharks are known to be not migratory.",
-    "answer": false
+    "question": "Blue sharks are known to be not migratory."
   },
   {
     "id": 3,
-    "question": "Butchart Gardens has 27 greenhouses.",
-    "answer": false
+    "question": "Butchart Gardens has 27 greenhouses."
   },
   {
     "id": 4,
-    "question": "Canadian geese mate for life.",
-    "answer": true
+    "question": "Canadian geese mate for life."
   },
   {
     "id": 5,
-    "question": "The original Capilano Suspension Bridge was built with hemp rope and cedar planks.",
-    "answer": true
+    "question": "The original Capilano Suspension Bridge was built with hemp rope and cedar planks."
   },
   {
     "id": 6,
-    "question": "Finfish are amongst the most cultured species in B.C waters.",
-    "answer": true
+    "question": "Finfish are amongst the most cultured species in B.C waters."
   },
   {
     "id": 7,
-    "question": "Giant Pacific Octopi are very extroverted.",
-    "answer": false
+    "question": "Giant Pacific Octopi are very extroverted."
   },
   {
     "id": 8,
-    "question": "Gray whales are also known as devil fish.",
-    "answer": true
+    "question": "Gray whales are also known as devil fish."
   },
   {
     "id": 9,
-    "question": "Grizzly bear front claws can grow to be a maximum of 5cm in length.",
-    "answer": false
+    "question": "Grizzly bear front claws can grow to be a maximum of 5cm in length."
   },
   {
     "id": 10,
-    "question": "Grouse Mountain Skyride goes to the peak of Vancouver.",
-    "answer": true
+    "question": "Grouse Mountain Skyride goes to the peak of Vancouver."
   },
   {
     "id": 11,
-    "question": "Seals can see in dark, deep water with their large eyes.",
-    "answer": true
+    "question": "Seals can see in dark, deep water with their large eyes."
   },
   {
     "id": 12,
-    "question": "Harbour Air has over 500,000 passengers a year.",
-    "answer": true
+    "question": "Harbour Air has over 500,000 passengers a year."
   },
   {
     "id": 13,
-    "question": "Great blue herons can fly up to 30 kilometres per hour.",
-    "answer": false
+    "question": "Great blue herons can fly up to 30 kilometres per hour."
   },
   {
     "id": 14,
-    "question": "Humpback whales can grow up to 8 meters long.",
-    "answer": false
+    "question": "Humpback whales can grow up to 8 meters long."
   },
   {
     "id": 15,
-    "question": "Kitsilano Beach used to be known as Greer's beach.",
-    "answer": true
+    "question": "Kitsilano Beach used to be known as Greer's beach."
   },
   {
     "id": 16,
-    "question": "Little brown bats hunt during the day.",
-    "answer": false
+    "question": "Little brown bats hunt during the day."
   },
   {
     "id": 17,
-    "question": "Loons are herbivores.",
-    "answer": false
+    "question": "Loons are herbivores."
   },
   {
     "id": 18,
-    "question": "Northern right whale dolphins can leap more than 6 meters over the surface of the water.",
-    "answer": true
+    "question": "Northern right whale dolphins can leap more than 6 meters over the surface of the water."
   },
   {
     "id": 19,
-    "question": "Orcas are the largest member of the dolphin family.",
-    "answer": true
+    "question": "Orcas are the largest member of the dolphin family."
   },
   {
     "id": 20,
-    "question": "Rockfish can live up to 120 years.",
-    "answer": true
+    "question": "Rockfish can live up to 120 years."
   },
   {
     "id": 21,
-    "question": "Sea lions cannot walk on land.",
-    "answer": false
+    "question": "Sea lions cannot walk on land."
   },
   {
     "id": 22,
-    "question": "Sea Stars can regenerate their arms if they are cut off.",
-    "answer": true
+    "question": "Sea Stars can regenerate their arms if they are cut off."
   },
   {
     "id": 23,
-    "question": "Stanley park was named after actor Stanley Adams.",
-    "answer": false
+    "question": "Stanley park was named after actor Stanley Adams."
   },
   {
     "id": 24,
-    "question": "Trumpeter Swans require a 90 meter takeoff to become airborne.",
-    "answer": true
+    "question": "Trumpeter Swans require a 90 meter takeoff to become airborne."
   },
   {
     "id": 25,
-    "question": "The Tufted Puffin is the smallest puffin.",
-    "answer": false
+    "question": "The Tufted Puffin is the smallest puffin."
   }
 ]
