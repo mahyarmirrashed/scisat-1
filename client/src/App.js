@@ -19,6 +19,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
 function App() {
+  const BOARD_SIZE = 6;
   const [statusMessage, setStatusMessage] = useState("Start the Game!");
   //const [inputGrid, setInputGrid] = useState([[]]);
   const images = [
@@ -33,6 +34,30 @@ function App() {
   [{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true}],
   ];
   const [boardGrid, setBoardGrid] = useState([board_grid]);
+
+  function startGame() {
+    let boardItems = [];
+    let candidates = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24];
+    let board_grid = Array(BOARD_SIZE).fill(null).map(() => Array(BOARD_SIZE));
+    while (boardItems.length<18) {
+      let rand = Math.floor(Math.random()*candidates.length);
+      let item = {"id":candidates[rand], "free":2};
+      boardItems.push(item);
+      candidates.splice(rand,1);
+    }
+    let idx = 0;
+    while (idx<BOARD_SIZE*BOARD_SIZE) {
+      let rand = Math.floor(Math.random()*boardItems.length);
+      let item = boardItems[rand].id;
+      board_grid[Math.floor(idx/BOARD_SIZE)][idx%BOARD_SIZE] = item;
+      boardItems[rand].free--;
+      if (boardItems[rand].free<=0) {
+        boardItems.splice(rand, 1);
+      }
+      idx++;
+    }
+    console.log(board_grid);
+  }
 
   function onClick(X, Y) {
     setStatusMessage("You clicked box " + X + " " + Y);
@@ -49,7 +74,15 @@ function App() {
           </Toolbar>
         </AppBar>
         <Paper marginTop="4" elevation={20}>
-          <Typography variant="h3">{statusMessage}</Typography>
+          <Button
+            type="submit"
+            variant="contained"
+            margin="normal"
+            onClick={() => startGame()}
+          >
+            Start game
+          </Button>
+          <Typography variant="p">{statusMessage}</Typography>
           {board_grid.map((nums, X) => (
             <Box
               display="flex"
