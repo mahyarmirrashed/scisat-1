@@ -27,11 +27,132 @@ function App() {
   
   //const [inputGrid, setInputGrid] = useState([[]]);
   const images = [
-    {"src":"/res/img/capilano-suspension-bridge.jpg",
-      "fact":""},
-    {"src":"/res/img/stanley-park.jpg",
-      "fact":""}
-  ]
+    {
+        "id":1,
+        "src": "/res/img/barnacle.jpg",
+        "fact": "Barancles eat with their legs."
+    },
+    {
+        "id":2,
+        "src": "/res/img/blue-shark.jpg",
+        "fact": "Blue sharks are highly migratory animals."
+    },
+    {
+        "id":3,
+        "src": "/res/img/butchart-gardens.jpg",
+        "fact": "Butchart Gardens has 26 green houses."
+    },
+    {
+        "id":4,
+        "src": "/res/img/canada-goose.jpg",
+        "fact": "Canadian geese mate for life."
+    },
+    {
+        "id":5,
+        "src": "/res/img/capilano-suspension-bridge.jpg",
+        "fact": "The original Capilano Suspension Bridge was built in 1889, with hemp rope and cedar planks."
+    },
+    {
+        "id":6,
+        "src": "/res/img/fishermen.jpg",
+        "fact": "The three main groups of species currently cultured in B.C waters include salmon and other finfish, shellfish and marine plants."
+    },
+    {
+        "id":7,
+        "src": "/res/img/giant-octopus.jpg",
+        "fact": "Giant Pacific Octopi are known to be intoverted."
+    },
+    {
+        "id":8,
+        "src": "/res/img/gray-whale.jpg",
+        "fact": "Gray whales earned the nickname devil fish because of their aggressive reactions when harpooned."
+    },
+    {
+        "id":9,
+        "src": "/res/img/grizzly-bear.jpg",
+        "fact": "Grizzly bear front claws can be up to 10cm in length."
+    },
+    {
+        "id":10,
+        "src": "/res/img/grouse-mountain.jpg",
+        "fact": "The Grouse Mountain Skyride is an 850M ascent to the peak of Vancouver."
+    },
+    {
+        "id":11,
+        "src": "/res/img/harbor-seal.jpg",
+        "fact": "Seals have large eyes to see in dark, deep water."
+    },
+    {
+        "id":12,
+        "src": "/res/img/harbour-air.jpg",
+        "fact": "Harbour Air has over 500,000 passengers a year."
+    },
+    {
+        "id":13,
+        "src": "/res/img/heron.jpg",
+        "fact": "Great blue herons can fly up to 55 kilometres per hour."
+    },
+    {
+        "id":14,
+        "src": "/res/img/humpback-whale.jpg",
+        "fact": "Humpback whales can grow up to 18 meters long."
+    },
+    {
+        "id":15,
+        "src": "/res/img/kitsilano-beach.jpg",
+        "fact": "Kitsalano beach used to be known as Greer's beach."
+    },
+    {
+        "id":16,
+        "src": "/res/img/little-brown-bat.jpg",
+        "fact": "Little brown bats are nocturnal and hunt most actively for a few hours after dusk."
+    },
+    {
+        "id":17,
+        "src": "/res/img/loon.jpg",
+        "fact": "Loons are carnivores."
+    },
+    {
+        "id":18,
+        "src": "/res/img/northern-right-whale-dolphin.jpg",
+        "fact": "Northern right whale dolphins can leap more than 6 meters over the surface of the water."
+    },
+    {
+        "id":19,
+        "src": "/res/img/orca.jpg",
+        "fact": "Orcas are the largest member of the dolphin family."
+    },
+    {
+        "id":20,
+        "src": "/res/img/rockfish.jpg",
+        "fact": "Rockfish can live up to 120 years."
+    },
+    {
+        "id":21,
+        "src": "/res/img/sea-lion.jpg",
+        "fact": "Sea lions can walk on land using their four flippers."
+    },
+    {
+        "id":22,
+        "src": "/res/img/seastar.jpg",
+        "fact": "Sea Stars (a.k.a Starfish) can regenerate their arms if they are cut off."
+    },
+    {
+        "id":23,
+        "src": "/res/img/stanley-park.jpg",
+        "fact": "Stanley park was named after Governor General Lord Frederick Stanley."
+    },
+    {
+        "id":24,
+        "src": "/res/img/trumpeter-swan.jpg",
+        "fact": "Trumpeter Swans require a 90 meter takeoff to become airborne."
+    },
+    {
+        "id":25,
+        "src": "/res/img/tufted-puffin.jpg",
+        "fact": "The Tufted Puffin is the largest puffin."
+    }
+]
   let board_grid = [[{"image":2, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true}],
   [{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true}],
   [{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true}],
@@ -62,6 +183,7 @@ function App() {
       idx++;
     }
     console.log(board_grid);
+    
   }
 
   function onClick(X, Y) {
@@ -98,7 +220,12 @@ function App() {
             <Typography variant="h3">SCISAT-1</Typography>
           </Toolbar>
         </AppBar>
-        <Paper mt="4" elevation={20}>
+        <Paper sx={{
+            marginTop: "16px", 
+            marginBottom: "16px",
+            paddingBottom: "64px"
+            }} 
+            elevation={20}>
           <Button
             type="submit"
             variant="contained"
