@@ -22,146 +22,177 @@ function App() {
   const BOARD_SIZE = 6;
   const [statusMessage, setStatusMessage] = useState("Click the button above to start!");
   const [moves, setMoves] = useState(0);
-  const [pickOne, setPickOne] = useState(null)
-  const [pickTwo, setPickTwo] = useState(null)
+  const [pickOne, setPickOne] = useState(null);
+  const [pickTwo, setPickTwo] = useState(null);
+  const [matches, setMatches] = useState(0);
+  let game = false;
   
   //const [inputGrid, setInputGrid] = useState([[]]);
   const images = [
     {
         "id":1,
         "src": "/res/img/barnacle.jpg",
-        "fact": "Barancles eat with their legs."
+        "fact": "Barancles eat with their legs.",
+        "covered": true
     },
     {
         "id":2,
         "src": "/res/img/blue-shark.jpg",
-        "fact": "Blue sharks are highly migratory animals."
+        "fact": "Blue sharks are highly migratory animals.",
+        "covered": true
     },
     {
         "id":3,
         "src": "/res/img/butchart-gardens.jpg",
-        "fact": "Butchart Gardens has 26 green houses."
+        "fact": "Butchart Gardens has 26 green houses.",
+        "covered": true
     },
     {
         "id":4,
         "src": "/res/img/canada-goose.jpg",
-        "fact": "Canadian geese mate for life."
+        "fact": "Canadian geese mate for life.",
+        "covered": true
     },
     {
         "id":5,
         "src": "/res/img/capilano-suspension-bridge.jpg",
-        "fact": "The original Capilano Suspension Bridge was built in 1889, with hemp rope and cedar planks."
+        "fact": "The original Capilano Suspension Bridge was built in 1889, with hemp rope and cedar planks.",
+        "covered": true
     },
     {
         "id":6,
         "src": "/res/img/fishermen.jpg",
-        "fact": "The three main groups of species currently cultured in B.C waters include salmon and other finfish, shellfish and marine plants."
+        "fact": "The three main groups of species currently cultured in B.C waters include salmon and other finfish, shellfish and marine plants.",
+        "covered": true
     },
     {
         "id":7,
         "src": "/res/img/giant-octopus.jpg",
-        "fact": "Giant Pacific Octopi are known to be intoverted."
+        "fact": "Giant Pacific Octopi are known to be intoverted.",
+        "covered": true
     },
     {
         "id":8,
         "src": "/res/img/gray-whale.jpg",
-        "fact": "Gray whales earned the nickname devil fish because of their aggressive reactions when harpooned."
+        "fact": "Gray whales earned the nickname devil fish because of their aggressive reactions when harpooned.",
+        "covered": true
     },
     {
         "id":9,
         "src": "/res/img/grizzly-bear.jpg",
-        "fact": "Grizzly bear front claws can be up to 10cm in length."
+        "fact": "Grizzly bear front claws can be up to 10cm in length.",
+        "covered": true
     },
     {
         "id":10,
         "src": "/res/img/grouse-mountain.jpg",
-        "fact": "The Grouse Mountain Skyride is an 850M ascent to the peak of Vancouver."
+        "fact": "The Grouse Mountain Skyride is an 850M ascent to the peak of Vancouver.",
+        "covered": true
     },
     {
         "id":11,
         "src": "/res/img/harbor-seal.jpg",
-        "fact": "Seals have large eyes to see in dark, deep water."
+        "fact": "Seals have large eyes to see in dark, deep water.",
+        "covered": true
     },
     {
         "id":12,
         "src": "/res/img/harbour-air.jpg",
-        "fact": "Harbour Air has over 500,000 passengers a year."
+        "fact": "Harbour Air has over 500,000 passengers a year.",
+        "covered": true
     },
     {
         "id":13,
         "src": "/res/img/heron.jpg",
-        "fact": "Great blue herons can fly up to 55 kilometres per hour."
+        "fact": "Great blue herons can fly up to 55 kilometres per hour.",
+        "covered": true
     },
     {
         "id":14,
         "src": "/res/img/humpback-whale.jpg",
-        "fact": "Humpback whales can grow up to 18 meters long."
+        "fact": "Humpback whales can grow up to 18 meters long.",
+        "covered": true
     },
     {
         "id":15,
         "src": "/res/img/kitsilano-beach.jpg",
-        "fact": "Kitsalano beach used to be known as Greer's beach."
+        "fact": "Kitsalano beach used to be known as Greer's beach.",
+        "covered": true
     },
     {
         "id":16,
         "src": "/res/img/little-brown-bat.jpg",
-        "fact": "Little brown bats are nocturnal and hunt most actively for a few hours after dusk."
+        "fact": "Little brown bats are nocturnal and hunt most actively for a few hours after dusk.",
+        "covered": true
     },
     {
         "id":17,
         "src": "/res/img/loon.jpg",
-        "fact": "Loons are carnivores."
+        "fact": "Loons are carnivores.",
+        "covered": true
     },
     {
         "id":18,
         "src": "/res/img/northern-right-whale-dolphin.jpg",
-        "fact": "Northern right whale dolphins can leap more than 6 meters over the surface of the water."
+        "fact": "Northern right whale dolphins can leap more than 6 meters over the surface of the water.",
+        "covered": true
     },
     {
         "id":19,
         "src": "/res/img/orca.jpg",
-        "fact": "Orcas are the largest member of the dolphin family."
+        "fact": "Orcas are the largest member of the dolphin family.",
+        "covered": true
     },
     {
         "id":20,
         "src": "/res/img/rockfish.jpg",
-        "fact": "Rockfish can live up to 120 years."
+        "fact": "Rockfish can live up to 120 years.",
+        "covered": true
     },
     {
         "id":21,
         "src": "/res/img/sea-lion.jpg",
-        "fact": "Sea lions can walk on land using their four flippers."
+        "fact": "Sea lions can walk on land using their four flippers.",
+        "covered": true
     },
     {
         "id":22,
         "src": "/res/img/seastar.jpg",
-        "fact": "Sea Stars (a.k.a Starfish) can regenerate their arms if they are cut off."
+        "fact": "Sea Stars (a.k.a Starfish) can regenerate their arms if they are cut off.",
+        "covered": true
     },
     {
         "id":23,
         "src": "/res/img/stanley-park.jpg",
-        "fact": "Stanley park was named after Governor General Lord Frederick Stanley."
+        "fact": "Stanley park was named after Governor General Lord Frederick Stanley.",
+        "covered": true
     },
     {
         "id":24,
         "src": "/res/img/trumpeter-swan.jpg",
-        "fact": "Trumpeter Swans require a 90 meter takeoff to become airborne."
+        "fact": "Trumpeter Swans require a 90 meter takeoff to become airborne.",
+        "covered": true
     },
     {
         "id":25,
         "src": "/res/img/tufted-puffin.jpg",
-        "fact": "The Tufted Puffin is the largest puffin."
+        "fact": "The Tufted Puffin is the largest puffin.",
+        "covered": true
     }
 ]
-  let board_grid = [[{"image":2, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true}],
-  [{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true}],
-  [{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true}],
-  [{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true}],
+  let board_grid = [[{"image":2, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true}],
+  [{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true}],
+  [{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true}],
+  [{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true}],
+  [{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true}],
+  [{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true}],
   ];
   const [boardGrid, setBoardGrid] = useState(board_grid);
 
   function startGame() {
     setMoves(0);
+    setMatches(0);
+    game = true;
     let boardItems = [];
     let candidates = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24];
     let board_grid = Array(BOARD_SIZE).fill(null).map(() => Array(BOARD_SIZE));
@@ -182,7 +213,12 @@ function App() {
       }
       idx++;
     }
-    setBoardGrid(board_grid)
+    let newBoard = board_grid.map((rows, indexX) => {
+      return rows.map((id, indexY) => {
+          return images[id];
+        })
+      })
+    setBoardGrid(newBoard);
   }
 
   function onClick(X, Y) {
@@ -209,8 +245,10 @@ function App() {
   useEffect(() => {
     if(pickOne)
     if(pickOne && pickTwo){
-      if(board_grid[pickOne[0]][pickOne[1]].image === board_grid[pickTwo[0]][pickTwo[1]].image){
+      if(boardGrid[pickOne[0]][pickOne[1]].src === boardGrid[pickTwo[0]][pickTwo[1]].src){
         console.log("same image")
+        setStatusMessage("Those two match! " + boardGrid[pickOne[0]][pickOne[1]].fact)
+        setMatches(matches+1);
       }
       else{console.log("diff image")}
       setPickOne(null)
@@ -245,6 +283,7 @@ function App() {
             Start game
           </Button>
           <Typography variant="p">Moves Made: {moves}</Typography>
+          <Typography variant="p">Matches: {matches}</Typography>
           <div/>
           <Typography variant="p">{statusMessage}</Typography>
           {board_grid.map((nums, X) => (
@@ -264,7 +303,7 @@ function App() {
                   }}
                   onClick={() => onClick(X, Y)}
                 >
-                {boardGrid[X][Y].covered?"":<img src={images[boardGrid[X][Y].image].src} width='128' height='128'></img>}</Box>
+                {boardGrid[X][Y].covered?"":<img src={boardGrid[X][Y].src} width='128' height='128'></img>}</Box>
               ))}
             </Box>
           ))}
