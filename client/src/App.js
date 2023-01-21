@@ -18,6 +18,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import SelectInput from '@mui/material/Select/SelectInput';
+import Fade from '@mui/material/Fade';
 
 function App() {
   const BOARD_SIZE = 6;
@@ -399,7 +400,7 @@ function App() {
                   }}
                   onClick={() => onClick(X, Y)}
                 >
-                {boardGrid[X][Y].covered?"":<img src={boardGrid[X][Y].src} width='128' height='128'></img>}</Box>
+                <Fade in={!boardGrid[X][Y].covered}>{<img src={boardGrid[X][Y].src} width='128' height='128'></img>}</Fade></Box>
               ))}
             </Box>
           ))}
