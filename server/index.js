@@ -67,8 +67,6 @@ app.post('/report', (req, res) => {
 
   let mostIncorrect = calculateMostIncorrectQuestion();
 
-  console.log(statistics['scores']);
-
   // write results (to prevent data loss)
   fs.writeFileSync(
     path.join(__dirname, '.', 'res', 'statistics.json'),
