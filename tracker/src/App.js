@@ -1,16 +1,23 @@
 import * as React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
-import FormGroup from '@mui/material/FormGroup';
 import GlobalStyles from '@mui/material/GlobalStyles';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import IOSSwitch from './IOSSwitch';
 
-const Question = () => {
+const Question = (props) => {
   return (
-    <FormGroup>
-      <IOSSwitch sx={{ m: 1 }} defaultChecked />
-    </FormGroup>
+    <Grid container data-question-id={props.id}>
+      <Grid container item xs={11}>
+        <Typography component="h6" variant="h6" align="left" display="inline">
+          {props.text}
+        </Typography>
+      </Grid>
+      <Grid container item xs={1} justifyContent="flex-end">
+        <IOSSwitch sx={{ mt: 0.5 }} defaultChecked />
+      </Grid>
+    </Grid>
   );
 };
 
@@ -49,7 +56,7 @@ const App = () => {
         component="main"
         sx={{ pt: 4, pb: 4 }}
       >
-        <Question />
+        <Question id={1} text="Lorem ipsum dolor sit amet." />
       </Container>
     </React.Fragment>
   );
