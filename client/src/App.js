@@ -264,6 +264,7 @@ function App() {
 
   }
 
+  // trigger when card is clicked
   function onClick(X, Y) {
     setStatusMessage("You clicked box " + X + " " + Y);
     
