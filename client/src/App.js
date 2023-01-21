@@ -158,7 +158,7 @@ function App() {
   [{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true}],
   [{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true}],
   ];
-  const [boardGrid, setBoardGrid] = useState([board_grid]);
+  const [boardGrid, setBoardGrid] = useState(board_grid);
 
   function startGame() {
     setMoves(0);
@@ -182,15 +182,24 @@ function App() {
       }
       idx++;
     }
-    console.log(board_grid);
-    
+    setBoardGrid(board_grid)
   }
 
   function onClick(X, Y) {
     setStatusMessage("You clicked box " + X + " " + Y);
-    board_grid[X][Y].covered = !board_grid[X][Y].covered;
-    handlePick([X,Y])
-
+    
+    let newBoard = boardGrid.map((rows, indexX) => {
+      return rows.map((box, indexY) => {
+          if(X === indexX && Y === indexY){
+            return {... box, covered:!box.covered}
+          }
+          else{
+            return (box)
+          }
+        })
+      })
+      handlePick([X,Y])
+      setBoardGrid(newBoard)
   }
 
   const handlePick = (pick) => {
@@ -199,7 +208,6 @@ function App() {
 
   useEffect(() => {
     if(pickOne)
-    console.log(pickOne[0])
     if(pickOne && pickTwo){
       if(board_grid[pickOne[0]][pickOne[1]].image === board_grid[pickTwo[0]][pickTwo[1]].image){
         console.log("same image")
@@ -256,7 +264,7 @@ function App() {
                   }}
                   onClick={() => onClick(X, Y)}
                 >
-                {board_grid[X][Y].covered?"":<img src={images[board_grid[X][Y].image].src} width='128' height='128'></img>}</Box>
+                {boardGrid[X][Y].covered?"":<img src={images[boardGrid[X][Y].image].src} width='128' height='128'></img>}</Box>
               ))}
             </Box>
           ))}
