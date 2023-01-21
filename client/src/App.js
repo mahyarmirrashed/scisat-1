@@ -26,7 +26,7 @@ function App() {
   const [pickOne, setPickOne] = useState(null);
   const [pickTwo, setPickTwo] = useState(null);
   const [matches, setMatches] = useState(0);
-  let game = false;
+  const [game, setGame] = useState(false);
   
   //const [inputGrid, setInputGrid] = useState([[]]);
   const images = [
@@ -151,7 +151,7 @@ function App() {
     },
     {
         "id":18,
-        "src": "/res/img/northern-right-whale-dolphin.jpg",
+        "src": "\\res\\img\\nothern-right-whale-dolphin.jpg",
         "fact": "Northern right whale dolphins can leap more than 6 meters over the surface of the water.",
         "covered": true,
         "solved": false
@@ -258,7 +258,7 @@ function App() {
       setBoardGrid(newBoard);
       setStatusMessage("click on two cards to see if they match!")
   
-      game = true;
+      setGame(true);
     }, 10000);
 
     
@@ -267,9 +267,11 @@ function App() {
 
   // trigger when card is clicked
   function onClick(X, Y) {
-    setStatusMessage("You clicked box " + X + " " + Y);
-    flip(X,Y);
-    handlePick([X,Y]);
+    if (game){
+      setStatusMessage("You clicked box " + X + " " + Y);
+      flip(X,Y);
+      handlePick([X,Y]);
+    }
   }
     
   const toggleSolved = (X, Y) => {
@@ -357,10 +359,10 @@ function App() {
           >
             Start game
           </Button>
-          <Typography variant="p">Moves Made: {moves}</Typography>
-          <Typography variant="p">Matches: {matches}</Typography>
+          <Typography variant="p" marginX={2}>Moves Made: {moves}</Typography>
+          <Typography variant="p" marginX={2}>Matches: {matches}</Typography>
           <div/>
-          <Typography variant="p">{statusMessage}</Typography>
+          <Typography variant="h6" marginY={2}>{statusMessage}</Typography>
           {board_grid.map((nums, X) => (
             <Box
               display="flex"
