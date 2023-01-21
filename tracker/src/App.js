@@ -1,3 +1,4 @@
+import axios from 'axios';
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -13,40 +14,33 @@ import Container from '@mui/material/Container';
 
 import questions from './res/questions.json';
 
-let responses = {};
-
-const DEFAULT_QUESTION_VALUE = false;
 const NUMBER_OF_QUESTIONS = 10;
 
 const chooseRandomQuestions = (n = NUMBER_OF_QUESTIONS) => {
   return questions.sort(() => Math.random() - Math.random()).slice(0, n);
 };
 
-const collectResponses = (e) => {
+const collectResponses = async (e) => {
   e.preventDefault();
 
-  // TODO: send responses to backend
-  console.log(responses);
+  const res = await axios.post('http://localhost:5000/report', {
+    answers: { 1: false }
+  });
+
+  alert(`The most incorrect question is: ${res.data.mostIncorrectQuestion}`);
 };
 
 const Question = (props) => {
   const [value, setValue] = React.useState('false');
 
-  const changeValue = (val) => {
-    responses[props.id] = val;
-    setValue(val);
-  };
-
-  responses[props.id] = DEFAULT_QUESTION_VALUE;
-
   return (
-    <Grid container sx={{ mb: 2 }} data-question-id={props.id}>
+    <Grid container sx={{ mb: 2 }}>
       <Grid container item xs={3}>
         <RadioGroup
           row
           sx={{ mt: -0.5 }}
           value={value}
-          onChange={(e) => changeValue(e.target.value)}
+          onChange={(e) => setValue(e.target.value)}
         >
           <FormControlLabel
             value="false"
