@@ -143,7 +143,7 @@ function App() {
 
   function onClick(X, Y) {
     if(game && !block && !boardGrid[X][Y].solved){
-      setStatusMessage("You clicked box " + X + " " + Y);
+      //setStatusMessage("You clicked box " + X + " " + Y);
       flip(X,Y)
       handlePick([X,Y])
     }
