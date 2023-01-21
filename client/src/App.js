@@ -274,11 +274,12 @@ function App() {
     }
   }
     
-  const toggleSolved = (X, Y) => {
+  const toggleSolved = (X1 ,Y1, X2, Y2) => {
     let newBoard = boardGrid.map((rows, indexX) => {
       console.log(...rows)
       return rows.map((box, indexY) => {
-          if(X === indexX && Y === indexY){
+          if((X1 === indexX && Y1 === indexY)||
+          (X2 === indexX && Y2 === indexY)){
             return {... box, solved:!box.solved}
           }
           else{
@@ -287,6 +288,23 @@ function App() {
         })
       })
       setBoardGrid(newBoard)
+  }
+
+  const clear = (X1 ,Y1, X2, Y2) => {
+    let newBoard = boardGrid.map((rows, indexX) => {
+      return rows.map((box, indexY) => {
+          if((pickOne[0] === indexX && pickOne[1] === indexY)||
+          (pickTwo[0] === indexX && pickTwo[1] === indexY)){
+            return {... box, covered:!box.covered}
+          }
+          else{
+            return (box)
+          }
+        })
+      })
+      setBoardGrid(newBoard)
+      setPickOne(null)
+      setPickTwo(null)
   }
 
   const flip = (X,Y) => {
@@ -301,6 +319,14 @@ function App() {
         })
       })
       setBoardGrid(newBoard)
+    }
+
+  function onClick(X, Y) {
+    if(!boardGrid[X][Y].solved){
+      setStatusMessage("You clicked box " + X + " " + Y);
+      flip(X,Y)
+      handlePick([X,Y])
+    }
   }
 
   const handlePick = (pick) => {
@@ -316,20 +342,17 @@ function App() {
       }
       if(boardGrid[pickOne[0]][pickOne[1]].src === boardGrid[pickTwo[0]][pickTwo[1]].src){
         setStatusMessage("Those two match! " + boardGrid[pickOne[0]][pickOne[1]].fact);
-        toggleSolved(pickOne[0], pickOne[1]);
-        toggleSolved(pickTwo[0], pickTwo[1]);
+        toggleSolved(pickOne[0], pickOne[1], pickTwo[0], pickTwo[1])
         setMatches(matches+1);
+        setPickOne(null)
+        setPickTwo(null)
       }
       else{
-        var clear = true
+        console.log(pickOne[0], pickOne[1], pickTwo[0], pickTwo[1])
+        setTimeout(function(){clear(pickOne[0], pickOne[1], pickTwo[0], pickTwo[1])}, 1000)
+        console.log(pickOne)
+        console.log(pickTwo)
       }
-      if(clear){
-        //flip(pickOne[0], pickOne[1]);
-        //flip(pickTwo[0], pickTwo[1]);
-        clear=false;
-      }
-      setPickOne(null)
-      setPickTwo(null)
       setMoves(moves+1)
     }
 
