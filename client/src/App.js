@@ -27,6 +27,7 @@ function App() {
   const [pickTwo, setPickTwo] = useState(null);
   const [matches, setMatches] = useState(0);
   const [game, setGame] = useState(false);
+  const [block, setBlock] = useState(false);
   
   //const [inputGrid, setInputGrid] = useState([[]]);
   const images = [
@@ -266,15 +267,6 @@ function App() {
     
 
   }
-
-  // trigger when card is clicked
-  function onClick(X, Y) {
-    if (game){
-      setStatusMessage("You clicked box " + X + " " + Y);
-      flip(X,Y);
-      handlePick([X,Y]);
-    }
-  }
     
   const toggleSolved = (X1 ,Y1, X2, Y2) => {
     let newBoard = boardGrid.map((rows, indexX) => {
@@ -304,9 +296,10 @@ function App() {
           }
         })
       })
-      setBoardGrid(newBoard)
-      setPickOne(null)
-      setPickTwo(null)
+      setBoardGrid(newBoard);
+      setPickOne(null);
+      setPickTwo(null);
+      setBlock(false);
   }
 
   const flip = (X,Y) => {
@@ -324,7 +317,7 @@ function App() {
     }
 
   function onClick(X, Y) {
-    if(!boardGrid[X][Y].solved){
+    if(game && !block && !boardGrid[X][Y].solved){
       setStatusMessage("You clicked box " + X + " " + Y);
       flip(X,Y)
       handlePick([X,Y])
@@ -344,16 +337,17 @@ function App() {
       }
       if(boardGrid[pickOne[0]][pickOne[1]].src === boardGrid[pickTwo[0]][pickTwo[1]].src){
         setStatusMessage("Those two match! " + boardGrid[pickOne[0]][pickOne[1]].fact);
-        toggleSolved(pickOne[0], pickOne[1], pickTwo[0], pickTwo[1])
+        toggleSolved(pickOne[0], pickOne[1], pickTwo[0], pickTwo[1]);
         setMatches(matches+1);
-        setPickOne(null)
-        setPickTwo(null)
+        setPickOne(null);
+        setPickTwo(null);
       }
       else{
-        console.log(pickOne[0], pickOne[1], pickTwo[0], pickTwo[1])
-        setTimeout(function(){clear(pickOne[0], pickOne[1], pickTwo[0], pickTwo[1])}, 1000)
-        console.log(pickOne)
-        console.log(pickTwo)
+        console.log(pickOne[0], pickOne[1], pickTwo[0], pickTwo[1]);
+        setBlock(true);
+        setTimeout(function(){clear(pickOne[0], pickOne[1], pickTwo[0], pickTwo[1])}, 1000);
+        console.log(pickOne);
+        console.log(pickTwo);
       }
       setMoves(moves+1)
     }
