@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 //import './style.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
@@ -22,6 +22,8 @@ function App() {
   const BOARD_SIZE = 6;
   const [statusMessage, setStatusMessage] = useState("Click the button above to start!");
   const [moves, setMoves] = useState(0);
+  const [pickOne, setPickOne] = useState(null)
+  const [pickTwo, setPickTwo] = useState(null)
   
   //const [inputGrid, setInputGrid] = useState([[]]);
   const images = [
@@ -30,7 +32,7 @@ function App() {
     {"src":"/res/img/stanley-park.jpg",
       "fact":""}
   ]
-  let board_grid = [[{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true}],
+  let board_grid = [[{"image":2, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true}],
   [{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true}],
   [{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true}],
   [{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true},{"image":1, "covered":true}],
@@ -65,9 +67,28 @@ function App() {
   function onClick(X, Y) {
     setStatusMessage("You clicked box " + X + " " + Y);
     board_grid[X][Y].covered = !board_grid[X][Y].covered;
-    setMoves(moves+1);
+    handlePick([X,Y])
 
   }
+
+  const handlePick = (pick) => {
+    pickOne ? setPickTwo(pick) : setPickOne(pick)
+  }
+
+  useEffect(() => {
+    if(pickOne)
+    console.log(pickOne[0])
+    if(pickOne && pickTwo){
+      if(board_grid[pickOne[0]][pickOne[1]].image === board_grid[pickTwo[0]][pickTwo[1]].image){
+        console.log("same image")
+      }
+      else{console.log("diff image")}
+      setPickOne(null)
+      setPickTwo(null)
+      setMoves(moves+1)
+    }
+
+  }, [pickOne, pickTwo])
   
   return (
     <div className="App">
