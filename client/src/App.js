@@ -272,11 +272,12 @@ function App() {
     handlePick([X,Y]);
   }
     
-  const flip = (X,Y) => {
+  const toggleSolved = (X, Y) => {
     let newBoard = boardGrid.map((rows, indexX) => {
+      console.log(...rows)
       return rows.map((box, indexY) => {
           if(X === indexX && Y === indexY){
-            return {... box, covered:!box.covered}
+            return {... box, solved:!box.solved}
           }
           else{
             return (box)
@@ -286,10 +287,18 @@ function App() {
       setBoardGrid(newBoard)
   }
 
-  function onClick(X, Y) {
-    setStatusMessage("You clicked box " + X + " " + Y);
-    flip(X,Y)
-    handlePick([X,Y])
+  const flip = (X,Y) => {
+    let newBoard = boardGrid.map((rows, indexX) => {
+      return rows.map((box, indexY) => {
+          if(X === indexX && Y === indexY && !box.solved){
+            return {... box, covered:!box.covered}
+          }
+          else{
+            return (box)
+          }
+        })
+      })
+      setBoardGrid(newBoard)
   }
 
   const handlePick = (pick) => {
@@ -304,15 +313,13 @@ function App() {
         return;
       }
       if(boardGrid[pickOne[0]][pickOne[1]].src === boardGrid[pickTwo[0]][pickTwo[1]].src){
-        console.log("same image")
         setStatusMessage("Those two match! " + boardGrid[pickOne[0]][pickOne[1]].fact);
+        toggleSolved(pickOne[0], pickOne[1]);
+        toggleSolved(pickTwo[0], pickTwo[1]);
         setMatches(matches+1);
       }
       else{
-        console.log(pickOne[0], pickOne[1], pickTwo[0], pickTwo[1])
         var clear = true
-        
-        console.log("diff image");
       }
       if(clear){
         //flip(pickOne[0], pickOne[1]);
