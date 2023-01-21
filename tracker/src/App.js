@@ -25,6 +25,7 @@ const chooseRandomQuestions = (n = NUMBER_OF_QUESTIONS) => {
 const collectResponses = (e) => {
   e.preventDefault();
 
+  // TODO: send responses to backend
   console.log(responses);
 };
 
