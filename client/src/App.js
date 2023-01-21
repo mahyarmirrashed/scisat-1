@@ -221,7 +221,9 @@ function App() {
     setStatusMessage("You started the game, memorize the board then match the images once they turn over!");
 
     let boardItems = [];
-    let candidates = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24];
+    let candidates = Array(images.length).fill(null).map((item, id) => {
+      return id;
+    });
     let board_grid = Array(BOARD_SIZE).fill(null).map(() => Array(BOARD_SIZE));
     while (boardItems.length<18) {
       let rand = Math.floor(Math.random()*candidates.length);
